@@ -1,4 +1,5 @@
 package com.pb.gordienko.hw2;
+
 import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
@@ -19,7 +20,10 @@ public class Calculator {
                 break;
             case '*': ans = num1 * num2;
                 break;
-            case '/': ans = num1 / num2;
+            case '/': if (num2 == 0) {
+                throw new IllegalArgumentException("Ошибка, нельзя делить на 0");
+            }
+                ans = num1 / num2;
                 break;
             default:  System.out.printf("Ошибка! Введите корректный знак арифметической операции");
                 return;
